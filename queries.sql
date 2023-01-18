@@ -51,3 +51,37 @@ SELECT species, COALESCE(AVG(
     END), 0)
 FROM animals
 GROUP BY species;
+
+
+SELECT animals.* FROM animals
+LEFT JOIN owners owner on owner.id = animals.owner_id
+WHERE owner.full_name = 'Melody Pond';
+
+SELECT animals.* FROM animals
+JOIN species specie on specie.id = animals.species_id
+WHERE specie.name = 'Pokemon';
+
+SELECT * FROM animals
+RIGHT JOIN owners owner ON owner.id = animals.owner_id;
+
+SELECT specie.name AS specie_name, COUNT(animals.species_id) AS count
+FROM animals
+JOIN species specie on specie.id = animals.species_id
+GROUP BY specie.name;
+
+SELECT animals.* FROM animals
+LEFT JOIN owners owner on owner.id = animals.owner_id
+JOIN species specie on specie.id = animals.species_id
+WHERE specie.name = 'Digimon' AND owner.full_name = 'Jennifer Orwell';
+
+SELECT animals.*
+FROM animals
+LEFT JOIN owners owner on owner.id = animals.owner_id
+WHERE animals.escape_attempts = 0 AND owner.full_name = 'Dean Winchester';
+
+SELECT owner.full_name, COUNT(animals.owner_id) AS owned_animals
+FROM animals
+LEFT JOIN owners owner on owner.id = animals.owner_id
+GROUP BY owner.full_name
+ORDER BY COUNT(animals.owner_id) DESC
+LIMIT 1;
