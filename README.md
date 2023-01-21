@@ -71,7 +71,7 @@ This will ensure that you have a separate user with different privileges and per
 
 - CREATEDB option will allow you to create databases.
 
-2. Create a database with your desired name:
+2.Create a database with your desired name:
 
 ```sql
   CREATE DATABASE 'database name';
