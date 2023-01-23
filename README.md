@@ -1,5 +1,5 @@
 
-# sql-tutorial
+# sql-tutorial 
 <!-- TABLE OF CONTENTS -->
 
 # 📗 Table of Contents
